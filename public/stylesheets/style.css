@@ -48,6 +48,11 @@ body {
 	padding: 25px 0 0 30px; 
 }
 
+#header .headings img {
+	margin-left: 200px;
+	margin-top: -50px;
+}
+
 #header h1 {
 	font-family: Trebuchet MS;
 	color:#000;
@@ -62,7 +67,7 @@ body {
 	background-image: none;
 	color:#000;
 	margin: 0;
-	padding: 2px 0 0 180px;
+	padding: 2px 0 0 250px;
 }
 
 
@@ -304,8 +309,8 @@ h1 a {
 }
 
 h2 { 
-	color:#4fb6e5;
-	font-size:22px; 
+	color:#888888;
+	font-size:18px; 
 	font-weight:bold; 
 	margin: 5px 0 5px 0px; 
 	padding:0 0 0 20px; 
