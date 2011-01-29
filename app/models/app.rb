@@ -35,7 +35,7 @@ class App < ActiveRecord::Base
   end
 
   def data_uri?
-    icon_path =~ /^data:/
+    (icon_path =~ /^data:/) == 0
   end
 
   def icon_url
