@@ -1,5 +1,10 @@
-<p id="notice"><%= notice %></p>
+<%= image_tag @app.icon_url %>
 
+<h2><%= @app.name %></h2>
 
-<%= link_to 'Edit', edit_app_path(@app) %> |
+<p><%= @app.description %></p>
+
+<p>Published: <%= @app.updated_at.to_date.to_s(:long) %><p>
+<p>Developer: <%= link_to @app.developer_name, @app.developer_url %><p>
+
 <%= link_to 'Back', apps_path %>
