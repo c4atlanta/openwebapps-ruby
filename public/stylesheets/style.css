@@ -337,7 +337,7 @@ th,td {
 }
 
 div.app {
-   border: 1px solid #444;
    float: left;
-   width:30%;
+   width: 30%;
+   height: 300px;
 }
