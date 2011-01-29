@@ -1,13 +1,15 @@
 <%= semantic_form_for(@app) do |form| %>
-  <%= form.inputs "Basic Details" do %>
+  <%= form.inputs "App Details" do %>
     <%= form.input :name %>
     <%= form.input :description, :input_html => { :rows => 10 } %>
     <%= form.input :base_url, :label => "Base URL" %>
     <%= form.input :launch_path, :hint => "Appended to Base URL, where user will be sent on app launch" %>
+    <%= form.input :twitter_account %>
   <% end %>
   <%= form.inputs "Developer Details" do %>
     <%= form.input :developer_name %>
-    <%= form.input :developer_url, :label => "URL for Developer" %>
+    <%= form.input :contact_email %>
+    <%= form.input :developer_url, :label => "Website" %>
   <% end %>
   <%= form.buttons %>
 <% end %>

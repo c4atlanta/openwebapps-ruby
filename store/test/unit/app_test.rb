@@ -66,6 +66,14 @@ class AppTest < ActiveSupport::TestCase
       should "have a release" do
         assert @manifest =~ /"release":/
       end
+
+      should "not have contact_email" do
+        assert_nil @manifest =~ /"contact_email":/
+      end
+
+      should "not have twitter_account" do
+        assert_nil @manifest =~ /"twitter_account":/
+      end
     end
   end
 end

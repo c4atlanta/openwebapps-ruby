@@ -28,7 +28,8 @@ class App < ActiveRecord::Base
   end
 
   def as_json(options={})
-    super(:except => [:developer_name, :developer_url, :created_at, :updated_at], :methods => [:developer, :release])
+    super(:except => [:developer_name, :developer_url, :created_at, :updated_at, :twitter_account, :contact_email],
+          :methods => [:developer, :release])
   end
 
   def manifest
