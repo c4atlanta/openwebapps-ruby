@@ -39,7 +39,7 @@ class App < ActiveRecord::Base
   def as_json(options={})
     super(:except => [:developer_name, :developer_url, :created_at,
                       :updated_at, :twitter_account, :contact_email,
-                     :icon_path, :category],
+                     :icon_path, :category, :approved, :id],
           :methods => [:developer, :release, :icons])
   end
 

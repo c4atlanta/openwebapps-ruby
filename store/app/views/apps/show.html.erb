@@ -1,3 +1,28 @@
+<script>
+var app_manifest = <%= raw(@app.manifest) %>;
+var app_installed = false;
+
+$(document).ready(function () {
+  AppClient.getInstalledBy({callback:function(result) {
+    if (result && result.installed) {
+      for (var i=0;i<result.installed.length;i++) {
+        if (result.installed[i].manifest.base_url == app_manifest.base_url) {
+          app_installed = true;
+          $("#install_button").hide();
+        }
+      }
+    }
+  }});
+  $("#install_button").live('click', function() {
+    AppClient.install({manifest: app_manifest, callback: function (arg) {
+      $("#install_button").text('Installed!');
+    }});
+  });
+});
+</script>
+
+<div id="install_button">INSTALL</div>
+
 <%= image_tag @app.icon_url %>
 
 <h2><%= @app.name %></h2>

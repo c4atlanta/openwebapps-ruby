@@ -87,6 +87,14 @@ class AppTest < ActiveSupport::TestCase
         assert_nil @manifest =~ /"category":/
       end
 
+      should "not have approved" do
+        assert_nil @manifest =~ /"approved":/
+      end
+
+      should "not have id" do
+        assert_nil @manifest =~ /"id":/
+      end
+
       should "have an icons hash" do
         assert @manifest =~ /"icons":\s*\{/
       end

@@ -4,7 +4,9 @@
 <head>
   <title>Open App Store</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "http://code.jquery.com/jquery-1.4.4.min.js" %>
+  <%= javascript_include_tag "https://myapps.mozillalabs.com/jsapi/include.js" %>
+  <%= javascript_include_tag "http://projects.zoulcreations.com/jquery/growl/jquery.growl.js" %>
   <%= formtastic_stylesheet_link_tag %>
   <%= csrf_meta_tag %>
 </head>
