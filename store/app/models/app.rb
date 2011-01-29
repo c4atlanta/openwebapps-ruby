@@ -27,9 +27,15 @@ class App < ActiveRecord::Base
     { :name => developer_name, :url => developer_url}
   end
 
+  def icons
+    { '96' => icon_path }
+  end
+
   def as_json(options={})
-    super(:except => [:developer_name, :developer_url, :created_at, :updated_at, :twitter_account, :contact_email],
-          :methods => [:developer, :release])
+    super(:except => [:developer_name, :developer_url, :created_at,
+                      :updated_at, :twitter_account, :contact_email,
+                     :icon_path],
+          :methods => [:developer, :release, :icons])
   end
 
   def manifest

@@ -9,33 +9,31 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-	<div class="content">
-		<div id="top">
+  <div class="content">
+    <div id="top">
+      
+    </div>
+    <div id="header">
+      
+      <div class="headings">
+	<h1>Open App Store</h1>
+	<h2>C4 Atlanta</h2>
+      </div>
+    </div>
 
-		</div>
-		<div id="header">
-			
-			<div class="headings">
-				<h1>Open App Store</h1>
-				<h2>C4 Atlanta</h2>
-			</div>
-		</div>
+    <div id="main">
+      <div class="left">
+        <%= yield %>
+        
+      </div>
+    </div>
 
-<div id="main">
-<div class="left">
-<%= yield %>
-
-</table>
-
-</div>
-</div>
-
-<div id="footer">
-	<div class="info">
-		&copy; 2011 <span class="design"><a href="http://c4atlanta.org">C4 Atlanta</a> | Special Thanks to <a href="http://startatlanta.org">Start Atlanta</a></span><br />
-		Site Design - <a href="http://www.designcreek.com">DesignCreek</a>  | Courtesy <a href="http://www.openwebdesign.org" target="_blank">Open Web Design</a></p>
-	</div>
-</div>
-
+    <div id="footer">
+      <div class="info">
+	&copy; 2011 <span class="design"><a href="http://c4atlanta.org">C4 Atlanta</a> | Special Thanks to <a href="http://startatlanta.org">Start Atlanta</a></span><br />
+	Site Design - <a href="http://www.designcreek.com">DesignCreek</a>  | Courtesy <a href="http://www.openwebdesign.org" target="_blank">Open Web Design</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

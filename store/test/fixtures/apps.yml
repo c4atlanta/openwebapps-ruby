@@ -5,9 +5,12 @@ demo:
   description: This is a demo app
   base_url: http://example.org/demoapp
   launch_path: ""
+  icon_path: 96.png
   app_urls: ["http://example.org/demoapp"]
   capabilities: []
   developer_name: Demo Dev
   developer_url: http://example.com/demodev
+  contact_email: dev@example.org
+  twitter_account: "@DemoApp"
   locales: {}
 

@@ -33,12 +33,16 @@ class AppTest < ActiveSupport::TestCase
       assert_equal ["http://example.com/appbase"], @app.app_urls
     end
 
-
     should "have a developer hash" do
       assert @app.developer
       assert_equal "Demo Dev", @app.developer[:name]
       assert_equal "http://example.com/demodev", @app.developer[:url]
     end
+
+    should "have a hacky icons hash" do
+      assert @app.icons
+      assert_equal @app.icon_path, @app.icons['96']
+     end
 
     context "manifest" do
       before do
@@ -73,6 +77,14 @@ class AppTest < ActiveSupport::TestCase
 
       should "not have twitter_account" do
         assert_nil @manifest =~ /"twitter_account":/
+      end
+
+      should "not have icon image path" do
+        assert_nil @manifest =~ /"icon_path":/
+      end
+
+      should "have an icons hash" do
+        assert @manifest =~ /"icons":\s*\{/
       end
     end
   end
