@@ -1,6 +1,6 @@
 OpenAppStore::Application.routes.draw do
   resources :apps
-  match 'pages(/:action)' => "pages"
+  match 'pages(/:action)' => "pages", :as => "pages"
   root :to => "apps#index"
 
   # See how all your routes lay out with "rake routes"
