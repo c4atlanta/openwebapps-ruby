@@ -1,0 +1,14 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+demo:
+  name: Demo App
+  description: This is a demo app
+  base_url: http://example.org/demoapp
+  launch_path: ""
+  app_urls: ["http://example.org/demoapp"]
+  capabilities: []
+  developer_name: Demo Dev
+  developer_url: http://example.com/demodev
+  locales: {}
+  release: 2011-01-29 09:57:41
+
