@@ -6,7 +6,11 @@
 
   <% apps.each do |app| %>
   <div class="app">
+    <5 if app.data_uri? %>
+    <%= link_to "<img src=\"#{app.icon_path}\" />", app %>
+    <% else %>
     <%= link_to image_tag(app.icon_url), app %>
+    <% end %>
     <p><%= app.name %></p>
     <p><%= app.description %></p>
     <% unless app.twitter_account.blank? %>
