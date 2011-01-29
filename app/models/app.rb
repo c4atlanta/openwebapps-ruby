@@ -10,6 +10,8 @@ class App < ActiveRecord::Base
 
   attr_protected :approved, :category
 
+  scope :unapproved, :conditions => { :approved => false }
+
   def set_defaults
     self.app_urls ||= []
     self.capabilities ||= []
