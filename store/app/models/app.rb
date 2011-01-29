@@ -8,13 +8,14 @@ class App < ActiveRecord::Base
   after_initialize :set_defaults
   before_validation :check_app_urls
 
-  attr_protected :approved
+  attr_protected :approved, :category
 
   def set_defaults
     self.app_urls ||= []
     self.capabilities ||= []
     self.locales ||= { }
     self.defaultLocale ||= "en-US"
+    self.category ||= "Unsorted"
   end
 
   def check_app_urls
@@ -31,10 +32,14 @@ class App < ActiveRecord::Base
     { '96' => icon_path }
   end
 
+  def icon_url
+    "#{base_url}#{icon_path}"
+  end
+
   def as_json(options={})
     super(:except => [:developer_name, :developer_url, :created_at,
                       :updated_at, :twitter_account, :contact_email,
-                     :icon_path],
+                     :icon_path, :category],
           :methods => [:developer, :release, :icons])
   end
 

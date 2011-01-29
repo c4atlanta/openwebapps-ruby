@@ -83,6 +83,10 @@ class AppTest < ActiveSupport::TestCase
         assert_nil @manifest =~ /"icon_path":/
       end
 
+      should "not have category" do
+        assert_nil @manifest =~ /"category":/
+      end
+
       should "have an icons hash" do
         assert @manifest =~ /"icons":\s*\{/
       end
