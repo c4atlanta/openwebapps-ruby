@@ -11,18 +11,18 @@ class AppsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:apps)
   end
 
-  # test "should get new" do
-  #   get :new
-  #   assert_response :success
-  # end
+  test "should get new" do
+    get :new
+    assert_response :success
+  end
 
-  # test "should create app" do
-  #   assert_difference('App.count') do
-  #     post :create, :app => @app.attributes
-  #   end
+  test "should create app" do
+    assert_difference('App.count') do
+      post :create, :app => @app.attributes
+    end
 
-  #   assert_redirected_to app_path(assigns(:app))
-  # end
+    assert_redirected_to app_path(assigns(:app))
+  end
 
   test "should show app" do
     get :show, :id => @app.to_param

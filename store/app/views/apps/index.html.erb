@@ -10,7 +10,7 @@
 <% @apps.each do |app| %>
   <tr>
     <td><%= app.name %></td>
-    <td><%= app.description%></td>
+    <td><%= app.description %></td>
     <td><%= link_to 'View Manifest', polymorphic_path(app, :format => :json) %></td>
   </tr>
 <% end %>

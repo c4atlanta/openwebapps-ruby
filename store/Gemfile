@@ -32,6 +32,7 @@ gem 'mysql2'
 
 gem 'inherited_resources', '~> 1.2.1'
 gem 'responders'
+gem 'formtastic', '~> 1.1.0'
 
 group :test do
   gem 'tu-context'

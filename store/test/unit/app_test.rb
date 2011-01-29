@@ -10,8 +10,6 @@ class AppTest < ActiveSupport::TestCase
       assert_equal [], @app.app_urls
       @app.app_urls.push "http://example.org/app1"
     end
-
-
   end
 
   context "Demo Application" do
@@ -23,6 +21,14 @@ class AppTest < ActiveSupport::TestCase
     should "have a manifest" do
       assert @app.manifest
     end
+
+    should "add base_url to app_urls" do
+      @app.app_urls = []
+      @app.base_url = "http://example.com/appbase"
+      @app.save
+      assert_equal ["http://example.com/appbase"], @app.app_urls
+    end
+
 
     should "have a developer hash" do
       assert @app.developer
@@ -51,6 +57,10 @@ class AppTest < ActiveSupport::TestCase
       should "not have date attrs" do
         assert_nil @manifest =~ /"created_at":/
         assert_nil @manifest =~ /"updated_at":/
+      end
+
+      should "have a release" do
+        assert @manifest =~ /"release":/
       end
     end
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110129161942) do
+ActiveRecord::Schema.define(:version => 20110129191635) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(:version => 20110129161942) do
     t.string   "developer_url"
     t.string   "defaultLocale"
     t.text     "locales"
-    t.datetime "release"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
