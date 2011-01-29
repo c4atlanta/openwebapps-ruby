@@ -23,7 +23,13 @@ $(document).ready(function () {
 
 <div id="install_button">INSTALL</div>
 
+<% if @app.data_uri? %>
+<img src="<%= @app.icon_path %>" />
+<% else %>
 <%= image_tag @app.icon_url %>
+<% end %>
+
+
 
 <h2><%= @app.name %></h2>
 

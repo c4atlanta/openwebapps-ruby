@@ -34,8 +34,12 @@ class App < ActiveRecord::Base
     { '96' => icon_path }
   end
 
+  def data_uri?
+    icon_path =~ /^data:/
+  end
+
   def icon_url
-    icon_path =~ /^data:/ ? icon_path : "#{base_url}#{icon_path}"
+    "#{base_url}#{icon_path}"
   end
 
   def as_json(options={})
