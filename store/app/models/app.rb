@@ -8,6 +8,8 @@ class App < ActiveRecord::Base
   after_initialize :set_defaults
   before_validation :check_app_urls
 
+  attr_protected :approved
+
   def set_defaults
     self.app_urls ||= []
     self.capabilities ||= []

@@ -10,6 +10,10 @@ class AppTest < ActiveSupport::TestCase
       assert_equal [], @app.app_urls
       @app.app_urls.push "http://example.org/app1"
     end
+
+    should "not be approved" do
+      assert !@app.approved?
+    end
   end
 
   context "Demo Application" do
