@@ -35,7 +35,7 @@ class App < ActiveRecord::Base
   end
 
   def icon_url
-    "#{base_url}#{icon_path}"
+    icon_path =~ /^data:/ ? icon_path : "#{base_url}#{icon_path}"
   end
 
   def as_json(options={})
