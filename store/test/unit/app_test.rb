@@ -22,7 +22,6 @@ class AppTest < ActiveSupport::TestCase
 
     should "have a manifest" do
       assert @app.manifest
-      puts @app.manifest
     end
 
     should "have a developer hash" do
@@ -47,6 +46,11 @@ class AppTest < ActiveSupport::TestCase
       should "not have unscoped developer attrs" do
         assert_nil @manifest =~ /"developer_name":/
         assert_nil @manifest =~ /"developer_url":/
+      end
+
+      should "not have date attrs" do
+        assert_nil @manifest =~ /"created_at":/
+        assert_nil @manifest =~ /"updated_at":/
       end
     end
   end
