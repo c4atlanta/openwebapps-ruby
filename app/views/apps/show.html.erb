@@ -16,7 +16,8 @@ $(document).ready(function () {
   }});
   $("#install_button").live('click', function() {
     AppClient.install({manifest: app_manifest, callback: function (arg) {
-      $("#install_button").text('Installed!');
+      $("#install_button a").text('Installed!');
+      $("#install_button").die('click');
       $("#installed").show();
     }});
   });
@@ -27,7 +28,6 @@ $(document).ready(function () {
 <div id="installed" style="display:none">
   Installed. <%= link_to "Go to your app dashboard.", "https://myapps.mozillalabs.com/" %>
 </div>
-<div id="already_installed" style="display:none">Already Installed!</div>
 
 <% if @app.data_uri? %>
 <img src="<%= @app.icon_path %>" />
