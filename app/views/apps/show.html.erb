@@ -9,6 +9,7 @@ $(document).ready(function () {
         if (result.installed[i].manifest.base_url == app_manifest.base_url) {
           app_installed = true;
           $("#install_button").hide();
+          $("#installed").show();
         }
       }
     }
@@ -16,12 +17,17 @@ $(document).ready(function () {
   $("#install_button").live('click', function() {
     AppClient.install({manifest: app_manifest, callback: function (arg) {
       $("#install_button").text('Installed!');
+      $("#installed").show();
     }});
   });
 });
 </script>
 
-<div id="install_button">INSTALL</div>
+<div id="install_button"><a href="#">INSTALL</a></div>
+<div id="installed" style="display:none">
+  Installed. <%= link_to "Go to your app dashboard.", "https://myapps.mozillalabs.com/" %>
+</div>
+<div id="already_installed" style="display:none">Already Installed!</div>
 
 <% if @app.data_uri? %>
 <img src="<%= @app.icon_path %>" />
