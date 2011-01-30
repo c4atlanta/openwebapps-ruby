@@ -25,31 +25,28 @@
       </div>
     </div>
 
-	<div id="menu">
-		<ul>
-			<li><%= link_to "App Store", root_url %></li>
-			<li><%= link_to "App Dashboard", "http://myapps.mozillalabs.com" %></li>
-			<li><%= link_to "FAQ", pages_path('faq') %></li>
-			<li><a href="http://github.com/c4atlanta">GitHub</a></li>
-		</ul>
-	</div>
+    <div id="menu">
+      <ul>
+	<li><%= link_to "App Store", root_url %></li>
+	<li><%= link_to "App Dashboard", "http://myapps.mozillalabs.com" %></li>
+	<li><%= link_to "FAQ", pages_path('faq') %></li>
+	<li><a href="http://github.com/c4atlanta">GitHub</a></li>
+      </ul>
+    </div>
 
 
     <div id="main">
-			<div class="right">
-				
-				
-				<div class="nav">
-				<h2>Demo Created By:</h2>
-				<div class="text">
-					<a href="http://c4atlanta.org"><img src="/images/c4orange.png" width=180 /></a>
-				</div>
-				</div>
-			</div>
-
+      <div class="right">
+	<div class="nav">
+	  <h2>Demo Created By:</h2>
+	  <div class="text">
+	    <a href="http://c4atlanta.org"><img src="/images/c4orange.png" width=180 /></a>
+	  </div>
+	</div>
+      </div>
+      
       <div class="left">
         <%= yield %>
-        
       </div>
     </div>
 
